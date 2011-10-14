@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RootViewController : UIViewController
+#import "AnimationController.h"
+@interface RootViewController : UIViewController <AnimationModuleDelegate>
 
 @end

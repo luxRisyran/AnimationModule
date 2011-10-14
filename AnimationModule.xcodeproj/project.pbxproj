@@ -14,6 +14,8 @@
 		063257231447EEB5005E40D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 063257221447EEB5005E40D6 /* main.m */; };
 		063257271447EEB5005E40D6 /* AnimationModuleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 063257261447EEB5005E40D6 /* AnimationModuleAppDelegate.m */; };
 		0632572A1447EEB5005E40D6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 063257281447EEB5005E40D6 /* MainWindow.xib */; };
+		063257321447EEDC005E40D6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063257311447EEDC005E40D6 /* RootViewController.m */; };
+		063257361447EF50005E40D6 /* AnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063257351447EF50005E40D6 /* AnimationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +23,17 @@
 		063257161447EEB5005E40D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		063257181447EEB5005E40D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0632571A1447EEB5005E40D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0632571E1447EEB5005E40D6 /* AnimationModule-Info.plist */ = {isa = PBXFileReference; path = "AnimationModule-Info.plist"; sourceTree = "<group>"; };
+		0632571E1447EEB5005E40D6 /* AnimationModule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnimationModule-Info.plist"; sourceTree = "<group>"; };
 		063257201447EEB5005E40D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		063257221447EEB5005E40D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		063257241447EEB5005E40D6 /* AnimationModule-Prefix.pch */ = {isa = PBXFileReference; path = "AnimationModule-Prefix.pch"; sourceTree = "<group>"; };
-		063257251447EEB5005E40D6 /* AnimationModuleAppDelegate.h */ = {isa = PBXFileReference; path = AnimationModuleAppDelegate.h; sourceTree = "<group>"; };
+		063257241447EEB5005E40D6 /* AnimationModule-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnimationModule-Prefix.pch"; sourceTree = "<group>"; };
+		063257251447EEB5005E40D6 /* AnimationModuleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationModuleAppDelegate.h; sourceTree = "<group>"; };
 		063257261447EEB5005E40D6 /* AnimationModuleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationModuleAppDelegate.m; sourceTree = "<group>"; };
 		063257291447EEB5005E40D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		063257301447EEDC005E40D6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		063257311447EEDC005E40D6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		063257351447EF50005E40D6 /* AnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationController.m; sourceTree = "<group>"; };
+		063257371447F230005E40D6 /* AnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,9 @@
 			children = (
 				063257251447EEB5005E40D6 /* AnimationModuleAppDelegate.h */,
 				063257261447EEB5005E40D6 /* AnimationModuleAppDelegate.m */,
-				063257281447EEB5005E40D6 /* MainWindow.xib */,
+				063257301447EEDC005E40D6 /* RootViewController.h */,
+				063257311447EEDC005E40D6 /* RootViewController.m */,
+				063257331447EF24005E40D6 /* animation module */,
 				0632571D1447EEB5005E40D6 /* Supporting Files */,
 			);
 			path = AnimationModule;
@@ -85,12 +93,22 @@
 		0632571D1447EEB5005E40D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				063257281447EEB5005E40D6 /* MainWindow.xib */,
 				0632571E1447EEB5005E40D6 /* AnimationModule-Info.plist */,
 				0632571F1447EEB5005E40D6 /* InfoPlist.strings */,
 				063257221447EEB5005E40D6 /* main.m */,
 				063257241447EEB5005E40D6 /* AnimationModule-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		063257331447EF24005E40D6 /* animation module */ = {
+			isa = PBXGroup;
+			children = (
+				063257371447F230005E40D6 /* AnimationController.h */,
+				063257351447EF50005E40D6 /* AnimationController.m */,
+			);
+			name = "animation module";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +172,8 @@
 			files = (
 				063257231447EEB5005E40D6 /* main.m in Sources */,
 				063257271447EEB5005E40D6 /* AnimationModuleAppDelegate.m in Sources */,
+				063257321447EEDC005E40D6 /* RootViewController.m in Sources */,
+				063257361447EF50005E40D6 /* AnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

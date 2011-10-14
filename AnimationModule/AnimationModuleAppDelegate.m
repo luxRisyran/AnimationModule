@@ -7,6 +7,7 @@
 //
 
 #import "AnimationModuleAppDelegate.h"
+#import "RootViewController.h"
 
 @implementation AnimationModuleAppDelegate
 
@@ -15,6 +16,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    RootViewController *root = [[RootViewController alloc] init];
+    [self.window addSubview:root.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

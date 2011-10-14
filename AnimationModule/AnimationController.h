@@ -8,6 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AnimationController : NSObject
+@protocol AnimationModuleDelegate <NSObject>
+@required
+-(void)animationModuleFinished;
+@end
 
+
+@interface AnimationController : NSObject {
+    UIView *objectView_;
+    CGPoint primaryPoint_;
+    CGPoint aimPoint_;
+    NSTimeInterval animationTime;
+    NSTimeInterval delayTime;
+    
+    SEL animationFinishedSEL;
+    
+    id <AnimationModuleDelegate> delegate_;
+}
+
+@property (nonatomic, assign) id <AnimationModuleDelegate> delegate;
+
+-(void)startAnimationModule;
+
+-(void)setupViewImg:(UIView *)view
+        PrimaryRect:(CGPoint)primaryRect
+          aimToRect:(CGPoint)aimRect;
 @end

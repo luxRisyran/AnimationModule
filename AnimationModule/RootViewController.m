@@ -7,53 +7,58 @@
 //
 
 #import "RootViewController.h"
+#import "AnimationController.h"
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)didReceiveMemoryWarning
 {
-    // Releases the view if it doesn't have a superview.
+
     [super didReceiveMemoryWarning];
     
-    // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(0, 0, 100, 40);
+    [button addTarget:self action:@selector(starAnimation) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
-*/
+
+-(void)starAnimation {
+
+
+    [self performSelectorOnMainThread:@selector(animationStart:) withObject:nil waitUntilDone:NO];
+}
+
+-(void)animationStart:(id)objects{
+    UIView *object = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
+    object.backgroundColor = [UIColor redColor];
+    [self.view addSubview:object];
+
+    AnimationController *animManager = [[AnimationController alloc] init];
+    [animManager setDelegate:self];
+    [animManager setupViewImg:object PrimaryRect:CGPointMake(150, 150) aimToRect:CGPointMake(300, 300)];
+    [animManager startAnimationModule];
+}
+
+-(void)animationModuleFinished {
+    NSLog(@"结束");
+}
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
 	return YES;
 }
 
